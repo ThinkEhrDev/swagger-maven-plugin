@@ -220,7 +220,7 @@ public class SpringSwaggerExtension extends AbstractSwaggerExtension {
             return ModelConverters.getInstance().readAsProperty(type);
         } else {
             String msg = String.format("Can't use non-primitive type: %s as request parameter", type);
-            log.error(msg);
+            log.warn(msg);
 
             // fallback to string if type is simple wrapper for String to support legacy code
             JavaType ct = constructType(type);
